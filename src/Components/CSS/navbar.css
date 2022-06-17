@@ -1,0 +1,16 @@
+.navbar{
+    width:100%;
+    display: flex;
+    justify-content: space-around;
+    position:fixed;
+    border-top: .5px solid rgba(255,255,255,.2);
+    padding:1em 0;
+    bottom: 0;
+    max-height: 1.25em;
+    background-color: black;
+    z-index: 2;
+}
+.navbar i{
+    font-size: 1.3em;
+    cursor:pointer;
+}
