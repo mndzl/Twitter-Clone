@@ -1,4 +1,5 @@
 import '../CSS/head.css'
+import React from 'react';
 import exploreIMG from '../Images/explore.png';
 
 export default function Head() {

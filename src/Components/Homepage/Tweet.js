@@ -1,6 +1,29 @@
 import '../CSS/tweet.css'
+import React, { useEffect, useState } from 'react'
+import moment from 'moment';
 
-export default function Tweet() {
+export default function Tweet({id, message, createdAt}) {
+    const [timeAgo, setTimeAgo] = useState("");
+
+    useEffect(() => {
+        const timeAgo = moment(createdAt.toDate()).fromNow();
+
+        const text = timeAgo.split(" ");
+
+        var number = text[0] === 'a' ? 1 : text[0];
+        var unit = text[1][0];
+        
+        var dateFormatted = number+unit;
+
+        if(unit==='d'){
+            const date = moment(createdAt.toDate()).format('D MMM');
+            dateFormatted = date.toLowerCase()+'.';
+        }
+
+        setTimeAgo(dateFormatted);
+
+    }, []);
+
     return (
         <div className="tweet">
             <div className="tweet-userpicture">
@@ -12,38 +35,23 @@ export default function Tweet() {
                         
                         <span className="tweet-user">Méndez</span>
                         <span className="tweet-username"> @Mendezzluis3</span>
-                        <span className="tweet-time"> · 15 jun.</span>
+                        <span className="tweet-time"> · {timeAgo}</span>
                     </div>
                     <div className="options"><strong>···</strong></div>
                 </div>
                 <div className="tweet-text">
                     <p>
-                    In my path to master React.js, my first project was small chat application that looks like a WhatsApp chat. 
-                    <br/>
-
-                    This is a Global Live Chat that everybody can log in with their Google account and chat with everyone on real time. 
-                    <br/>
-
-                    <span className="url">https://chat-68052.firebaseapp.com</span>
-                    <br/>
-                    <br/>
-
-                    <span className="tag">@platzi</span>
-                    <br/>
-
-                    <span className="hashtag">#firebase</span>
-                    <br/>
-                    <span className="hashtag">#ReactJS</span>
+                        {message}
                     </p>
                 </div>
-                <div className="tweet-image">
+                {/* <div className="tweet-image">
                     <img alt='user' src="https://pbs.twimg.com/media/FVVM1wVWQAMYoFU?format=jpg&name=360x360"></img>
-                </div>
+                </div> */}
                 <div className="tweet-actions">
-                    <span><i class="fa-regular fa-comment"></i> <span className="number">56</span></span>
-                    <span><i class="fa-solid fa-retweet"></i> <span className="number">233</span></span>
-                    <span><i class="fa-regular fa-heart"></i> <span className="number"> 7.684</span></span>
-                    <span><i class="fa-solid fa-arrow-up-from-bracket"></i></span>
+                    <span><i className="fa-regular fa-comment"></i> <span className="number">56</span></span>
+                    <span><i className="fa-solid fa-retweet"></i> <span className="number">233</span></span>
+                    <span><i className="fa-regular fa-heart"></i> <span className="number"> 7.684</span></span>
+                    <span><i className="fa-solid fa-arrow-up-from-bracket"></i></span>
                 </div>
 
             </div>

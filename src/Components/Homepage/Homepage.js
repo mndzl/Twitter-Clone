@@ -1,4 +1,5 @@
 import '../CSS/homepage.css';
+import React from 'react';
 import Head from './Head';
 import Feed from './Feed';
 import Navbar from './Navbar';

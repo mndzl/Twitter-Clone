@@ -5,6 +5,10 @@
     padding:1em 5%;
     margin: auto;
     border-top: .2px solid #464646;
+    border-bottom: .2px solid #464646;
+}
+.tweet-content{
+    width: 100%;
 }
 .tweet-userpicture, .tweet-userpicture img{
     border-radius: 50%;
