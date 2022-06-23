@@ -19,3 +19,22 @@ a{
 .tag, .hashtag, .url{
   color:#1DA1F2;
 }
+
+.user-picture, .user-picture img{
+  border-radius: 50%;
+  width: 2em;
+  height: 2em;
+  cursor:pointer;
+}
+.horizontal-separator{
+  width:100%;
+  background-color:gray;
+  height: 1px;
+  opacity: .5;
+}
+.vertical-separator{
+  width: 1px;
+  height: 2em;
+  background-color: gray;
+  opacity: .4;
+}

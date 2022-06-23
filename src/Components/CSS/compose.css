@@ -1,0 +1,126 @@
+#compose{
+    width:90%;
+    margin:auto;
+    position: relative;
+    height: 100vh;
+}
+.compose-head{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    margin:auto;
+    padding:.7em 0;
+    margin-bottom:.5em;
+}
+.compose-head button{
+    padding:.8em 1.6em;
+    background-color: #1DA1F2;
+    border:none;
+    border-radius: 20px;
+    color:white;
+    font-weight: bold;
+    line-height: .8em;
+    cursor:pointer;
+}
+
+.compose-container{
+    display: flex;
+    gap:1em;
+}
+.compose-container .user-picture, .compose-container .user-picture img{
+    width:3em;
+    height:3em;
+}
+.compose-tweet{
+    width: 85%;
+    margin-top:1em;
+}
+.compose-text textarea{
+    width: 100%;
+    background-color: transparent;
+    border:none;
+    color:white;
+    font-size: 1.2em;
+    font-weight: bold;
+    height: 4em;
+    margin-bottom:1em;
+    resize:vertical;
+    outline:none;
+    font-family: 'Helvetica Neue';
+}
+.compose-range > i, .compose-range > span{
+    color:#1DA1F2;
+    font-weight: bold;
+    font-size: .9em;
+}
+#compose .horizontal-separator{
+    margin:1em 0;
+}
+.compose-add{
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.1em;
+    color:#1DA1F2;
+    position: relative;
+    align-items: center;
+}
+.compose-add i{
+    cursor:pointer;
+}
+.compose-add .fa-plus{
+    border:1px solid gray;
+    border-radius: 50%;
+    font-size: .8em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:1.5em;
+    width: 1.5em;
+    margin-left: .2em;
+}
+.progressContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap:.5em;
+    opacity: 0;
+}
+.show{
+    opacity: 1;
+}
+
+.circle-background,
+.circle-progress {
+fill: none;
+}
+
+.circle-background {
+stroke-width: 2px;
+opacity: .5;
+stroke: gray;
+}
+
+.circle-progress {
+stroke-linecap: round;
+stroke-linejoin: round;
+stroke-width: 2px;
+stroke: #1DA1F2;
+}
+
+.circle-text {
+font-size: .8em;
+font-weight: bold;
+fill:transparent;
+}
+.limit-warning{
+    fill: gray;
+}
+.limit-full{
+    fill:red;
+}
+.limit-warning-progress{
+    stroke: yellow;
+}
+.limit-full-progress{
+    stroke:red;
+}

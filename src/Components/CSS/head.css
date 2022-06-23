@@ -9,13 +9,7 @@
     width: 100%;
     /*border-bottom: .5px solid gray;*/
 }
-.head-user-picture, .head-user-picture img{
-    background-color:gray;
-    border-radius: 50%;
-    width: 2em;
-    height: 2em;
-    cursor:pointer;
-}
+
 .head-title p{
     color:white;
     font-weight:bold;

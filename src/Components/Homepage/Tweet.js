@@ -26,7 +26,7 @@ export default function Tweet({id, message, createdAt}) {
 
     return (
         <div className="tweet">
-            <div className="tweet-userpicture">
+            <div className="user-picture">
                 <img src="https://pbs.twimg.com/profile_images/1525129595045007360/YX8NICtP_400x400.jpg" alt="user"/>
             </div>
             <div className="tweet-content">

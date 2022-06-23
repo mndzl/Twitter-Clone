@@ -10,7 +10,7 @@
 .tweet-content{
     width: 100%;
 }
-.tweet-userpicture, .tweet-userpicture img{
+.tweet .user-picture, .tweet .user-picture img{
     border-radius: 50%;
     width: 3em;
     height: 3em;

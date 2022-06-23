@@ -1,0 +1,16 @@
+.notification-container{
+    position:absolute;
+    bottom:0;
+    left: -5%;
+    padding:.5em 1.5em;
+    width: calc(110% - 3em);
+    color:white;
+    display: flex;
+    justify-content: space-between;
+}
+.notification-container .link{
+    font-weight: bold;
+}
+.info{
+    background-color: #1DA1F2;
+}
