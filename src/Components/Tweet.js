@@ -1,4 +1,4 @@
-import '../CSS/tweet.css'
+import './CSS/tweet.css'
 import React, { useEffect, useState } from 'react'
 import moment from 'moment';
 
@@ -12,12 +12,16 @@ export default function Tweet({id, message, createdAt}) {
 
         var number = text[0] === 'a' ? 1 : text[0];
         var unit = text[1][0];
-        
+
         var dateFormatted = number+unit;
 
         if(unit==='d'){
             const date = moment(createdAt.toDate()).format('D MMM');
             dateFormatted = date.toLowerCase()+'.';
+        }
+
+        if(timeAgo === "a few seconds ago"){
+            dateFormatted = "3s";
         }
 
         setTimeAgo(dateFormatted);

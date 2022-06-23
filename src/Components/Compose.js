@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import {addDoc, Timestamp, collection} from 'firebase/firestore';
-import {db} from '../firebase.js';
+import {db} from '../Context/firebase.js';
 import './CSS/compose.css';
-import setInputHeight from './setInputHeight';
+import setInputHeight from '../Scripts/setInputHeight.js';
 import Notification from './Notification'
+import { Link } from "react-router-dom";
 
 
 export default function Compose(){
@@ -61,7 +62,7 @@ export default function Compose(){
         <div id="compose">
             <div className="compose-head">
                 <div className="compose-back">
-                    <i className="fa-solid fa-arrow-left"></i>
+                    <Link to="/"> <i className="fa-solid fa-arrow-left"></i> </Link>
                 </div>
                 <div className="compose-submit">
                     <button style={{
