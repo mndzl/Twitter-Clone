@@ -1,7 +1,19 @@
-import React from "react";
+import React, {useState, createContext, useEffect} from 'react';
 
-const notifications = React.createContext({});
+export const ApiContext = createContext();
 
-export const notificationsProvider = notifications.Provider;
+export const ApiProvider = (props) => {
+    const [notification, setNotification] = useState({});
 
-export default notifications;
+    useEffect(() => {
+        setNotification({
+            show:false,
+        })
+    }, [])
+
+    return (
+        <ApiContext.Provider value={[notification, setNotification]}>
+            {props.children}
+        </ApiContext.Provider>
+    );
+}

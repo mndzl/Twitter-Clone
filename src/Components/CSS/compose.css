@@ -21,8 +21,11 @@
     font-weight: bold;
     line-height: .8em;
     cursor:pointer;
+    position: relative;
 }
-
+.compose-head a{
+    padding:1em 0;
+}
 .compose-container{
     display: flex;
     gap:1em;
@@ -67,6 +70,7 @@
 .compose-add i{
     cursor:pointer;
 }
+
 .compose-add .fa-plus{
     border:1px solid gray;
     border-radius: 50%;

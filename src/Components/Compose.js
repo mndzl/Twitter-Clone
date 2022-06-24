@@ -1,16 +1,19 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import {addDoc, Timestamp, collection} from 'firebase/firestore';
 import {db} from '../Context/firebase.js';
 import './CSS/compose.css';
 import setInputHeight from '../Scripts/setInputHeight.js';
 import Notification from './Notification'
 import { Link } from "react-router-dom";
+import { ApiContext } from "../Context/Context.js";
+import { useNavigate } from "react-router-dom";
 
 
 export default function Compose(){
     const [text, setText] = useState("");
     const [percentage, setPercentage] = useState(0);
-    const [notification, setNotification] = useState({});
+    const [notification, setNotification] = useContext(ApiContext);
+    const navigate = useNavigate();
 
     const textAreaHandle = (event) => {
         setInputHeight(event, '100px');
@@ -31,21 +34,12 @@ export default function Compose(){
             link:link,
             show:true,
         })
-        setTimeout(() => {
-            setNotification({
-                msg:msg,
-                type:type,
-                link:link,
-                show:false,
-            })
-        }, 5000);
 
     }
 
     const newTweet = async() => {
-        const tweetsRef = collection(db, "tweets");
-
         if (text.length > 0 && text.length < 280){
+            const tweetsRef = collection(db, "tweets");
             await addDoc(
                 tweetsRef, 
                 { 
@@ -56,6 +50,9 @@ export default function Compose(){
             )
             renderNotification("Your tweet was sent", "info", "#");
         }
+
+        navigate("/");
+
     }
 
     return (
@@ -68,7 +65,13 @@ export default function Compose(){
                     <button style={{
                         opacity:text.length>0 && text.length<280 ? 1: .5, 
                         cursor: text.length>0 && text.length<280 ? "pointer":"default"
-                    }} className="compose-submit-button" onClick={newTweet}>Tweet</button>
+                    }} className="compose-submit-button" onClick={newTweet} {...text.length<0 && text.length>280 ? "disabled":null}>
+                        {text.length>0 && text.length<280 ? 
+                        <Link to="/"> Tweet </Link>
+                        :
+                        "Tweet"
+                        }
+                        </button>
                 </div>
             </div>
 
@@ -114,9 +117,9 @@ export default function Compose(){
             </div>
 
             
-            { notification.show &&
+            {/* { !notification.shown &&
                 <Notification msg={notification.msg} type={notification.type} link={notification.link}/>
-            }
+            } */}
         </div>
     )
 }

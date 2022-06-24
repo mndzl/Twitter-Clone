@@ -1,7 +1,7 @@
 .write{
     position:fixed;
     border:.5px solid #1DA1F2;
-    bottom: 4.5em;
+    bottom: calc(5vh + 2em);
     overflow: hidden;
     right:1.5em;
     z-index: 3;
@@ -35,4 +35,8 @@
 .feed{
     padding-top: 3em;
     padding-bottom:3em;
+    position: relative;
 } 
+.homepage-container{
+    position: relative;
+}
