@@ -49,9 +49,8 @@ export default function Compose(){
                 }
             )
             renderNotification("Your tweet was sent", "info", "#");
+            navigate("/");
         }
-
-        navigate("/");
 
     }
 
@@ -66,11 +65,7 @@ export default function Compose(){
                         opacity:text.length>0 && text.length<280 ? 1: .5, 
                         cursor: text.length>0 && text.length<280 ? "pointer":"default"
                     }} className="compose-submit-button" onClick={newTweet} {...text.length<0 && text.length>280 ? "disabled":null}>
-                        {text.length>0 && text.length<280 ? 
-                        <Link to="/"> Tweet </Link>
-                        :
-                        "Tweet"
-                        }
+                            Tweet
                         </button>
                 </div>
             </div>

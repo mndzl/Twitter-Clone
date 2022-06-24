@@ -1,0 +1,64 @@
+.signup-head{
+    height: 6.5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.signup-head-close{
+    font-size: .9em;
+    opacity: .8;
+    font-weight: bolder;
+    position: absolute;
+    top:1em;
+    left:1.4em;
+}
+.signup-head-logo{
+    font-size: 1.8em;
+    opacity: .9;
+}
+
+.signup-body{
+    height: 80vh;
+    width: 80%;
+    margin:auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.signup-body h1{
+    text-align: left;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 1em;
+}
+
+.signup-google{
+    display: flex;
+    border-radius: 30px;
+    padding:.5em 0;
+    color:black;
+    background-color: white;
+    gap:.5em;
+    align-items: center;
+    justify-content:center;
+    margin: auto;
+    width: 100%;
+}
+.signup-google{
+    font-size: .9em;
+}
+.signup-google-logo, .signup-google img{
+    width:1.5em;
+    height: 1.5em;
+}
+.signup-login{
+    color:gray;
+    font-size: .9em;
+    font-weight: bold;
+    margin-top: 3em;
+}
+.signup-login a{
+    color:#1DA1F2;
+    font-weight: bold;
+}

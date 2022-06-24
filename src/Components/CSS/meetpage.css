@@ -1,0 +1,42 @@
+.meetpage{
+    background-color:black;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+.meetpage-main{
+    height:92vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.meetpage-main i{
+    font-size: 3em;
+    opacity: .8;
+}
+.meetpage-account{
+    height: 8vh;
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap:.7em;
+    padding: 0 1em;
+    align-items: center;
+    justify-content: space-around;
+    background-color:#1DA1F2;
+}
+.meetpage-account button{
+    padding:.9em 1em;
+    border:none;
+    width: 100%;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor:pointer;
+}
+.meetpage-account .meetpage-login button{
+    background-color: transparent;
+    color:white;
+    border:1px solid rgba(255,255,255,.4);
+}
+.meetpage-account .meetpage-register button{
+    background-color: white;
+}

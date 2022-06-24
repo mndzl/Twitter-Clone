@@ -16,13 +16,13 @@ export default function homepage(){
     const [tweets, setTweets] = useState([]);
 
     useEffect(() => {
-        getTweets();
-
-        setInterval(()=>{
-            setNotification({
-                show:false,
-            });
-        }, 5000)
+        getTweets().then(
+            setInterval(()=>{
+                setNotification({
+                    show:false,
+                });
+            }, 5000)
+        )
 
         console.log(notification);
     }, []);
